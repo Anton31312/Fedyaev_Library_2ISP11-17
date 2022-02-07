@@ -42,7 +42,9 @@ namespace LIBRARY1
 
         private void btnReaderBook_Click(object sender, RoutedEventArgs e)
         {
-
+            RentBookWindow rentBookWindow = new RentBookWindow();
+            rentBookWindow.ShowDialog();
+            this.Close();
         }
     }
 }

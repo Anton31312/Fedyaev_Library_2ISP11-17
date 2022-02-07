@@ -1,0 +1,97 @@
+﻿<Window x:Class="LIBRARY1.Windows.RentBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LIBRARY1.Windows"
+        mc:Ignorable="d"
+        Title="RentBookWindow" 
+        Height="600"
+        Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#1da1f2">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <TextBlock Text="Выдача книг"
+                       HorizontalAlignment="Center"
+                       FontSize="35"
+                       FontFamily="Helvetica"
+                       LineHeight="32"
+                       FontStyle="Normal"
+                       FontWeight="Bold"
+                       FontStretch="Normal"
+                       Foreground="#ffffff"/>
+
+        <WrapPanel Grid.Row="1"
+                   VerticalAlignment="Center">
+            <TextBlock Text="Поиск"
+                       Margin="20 0 10 0"
+                       FontSize="18"
+                       FontFamily="Helvetica"
+                       FontStyle="Normal"
+                       FontWeight="Bold"
+                       FontStretch="Normal"
+                       Foreground="#ffffff"/>
+
+            <TextBox x:Name="txtSearch"
+                     Width="150"
+                     FontSize="18"
+                     TextChanged="txtSearch_TextChanged"
+                     Style="{DynamicResource txtRound}"/>
+
+            <ComboBox x:Name="cmbSort"
+                      Width="150"
+                      Margin="20 0 0 0"
+                      SelectionChanged="cmbSort_SelectionChanged"/>
+        </WrapPanel>
+
+        <ListView x:Name="listRentBook"
+                  Grid.Row="3"
+                  KeyUp="listRentBook_KeyUp">
+            <ListView.View>
+                <GridView ColumnHeaderContainerStyle="{DynamicResource ColorListView}">
+                    <GridViewColumn Header="Фамилия читателя" Width="Auto" DisplayMemberBinding="{Binding Reader.LastName}"/>
+                    <GridViewColumn Header="Имя читателя" Width="Auto" DisplayMemberBinding="{Binding Reader.FirstName}"/>
+                    <GridViewColumn Header="Название книги" Width="150" DisplayMemberBinding="{Binding Book.Title}"/>
+                    <GridViewColumn Header="Дата взятие книги" Width="150" DisplayMemberBinding="{Binding StartDate}"/>
+                    <GridViewColumn Header="Дата возврата книги" Width="Auto" DisplayMemberBinding="{Binding EndDate}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button x:Name="btnBack"
+                Content="Назад"
+                Style="{DynamicResource RoundCorner}"
+                Grid.Row="4"
+                Width="100"
+                Height="30"
+                FontFamily="Helvetica"
+                Foreground="#ffffff"
+                HorizontalAlignment="Left"
+                Margin="10 0 0 0"
+                FontSize="20"
+                Click="btnBack_Click"/>
+
+        <Button  x:Name="btnAddRentBook"
+                 Content="Добавить"
+                 FontSize="20"
+                 Margin="0 0 10 0"
+                 HorizontalAlignment="Right"
+                 Width="100"
+                 Height="30"
+                 FontFamily="Helvetica"
+                 Foreground="#ffffff"
+                 Style="{DynamicResource RoundCorner}"
+                 Grid.Row="4"
+                 Click="btnAddRentBook_Click"/>
+    </Grid>
+</Window>
