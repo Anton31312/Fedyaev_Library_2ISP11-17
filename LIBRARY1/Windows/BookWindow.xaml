@@ -69,6 +69,19 @@
             </ListView.View>
         </ListView>
 
+        <Button x:Name="btnBack"
+                Content="Назад"
+                Style="{DynamicResource RoundCorner}"
+                Grid.Row="4"
+                Width="100"
+                Height="30"
+                FontFamily="Helvetica"
+                Foreground="#ffffff"
+                HorizontalAlignment="Left"
+                Margin="10 0 0 0"
+                FontSize="20"
+                Click="btnBack_Click"/>
+
         <Button  x:Name="btnAddBook"
                  Content="Добавить"
                  FontSize="20"

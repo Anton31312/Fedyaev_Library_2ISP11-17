@@ -114,5 +114,12 @@ namespace LIBRARY1.Windows
                 }
             }
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

@@ -30,12 +30,14 @@ namespace LIBRARY1
         {
             BookWindow bookWindow = new BookWindow();
             bookWindow.ShowDialog();
+            this.Close();
         }
 
         private void btnReader_Click(object sender, RoutedEventArgs e)
         {
             ReaderWindow readerWindow = new ReaderWindow();
             readerWindow.ShowDialog();
+            this.Close();
         }
 
         private void btnReaderBook_Click(object sender, RoutedEventArgs e)
