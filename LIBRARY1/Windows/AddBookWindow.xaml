@@ -1,0 +1,186 @@
+﻿<Window x:Class="LIBRARY1.Windows.AddBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LIBRARY1.Windows"
+        mc:Ignorable="d"
+        Title="AddBookWindow" 
+        Height="450"
+        Width="600"
+        WindowStartupLocation="CenterScreen"
+        Background="#1da1f2">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Добавить книгу"
+                   HorizontalAlignment="Center"
+                   FontSize="35"
+                   FontFamily="Helvetica"
+                   LineHeight="32"
+                   FontStyle="Normal"
+                   FontWeight="Bold"
+                   FontStretch="Normal"
+                   Foreground="#ffffff"
+                   Grid.ColumnSpan="2"/>
+
+        <!--Левая часть с определениями столбцов-->
+        <TextBlock Text="Название книги"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 10 0"
+                   FontSize="20"
+                   FontFamily="Helvetica"
+                   FontStyle="Normal"
+                   FontWeight="Normal"
+                   FontStretch="Normal"
+                   Foreground="#ffffff"
+                   Grid.Row="1"
+                   VerticalAlignment="Center"/>
+
+        <TextBlock Text="Фамилия автора"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 10 0"
+                   FontSize="20"
+                   FontFamily="Helvetica"
+                   FontStyle="Normal"
+                   FontWeight="Normal"
+                   FontStretch="Normal"
+                   Foreground="#ffffff"
+                   Grid.Row="2"
+                   VerticalAlignment="Center"/>
+
+        <TextBlock Text="Имя автора"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 10 0"
+                   FontSize="20"
+                   FontFamily="Helvetica"
+                   FontStyle="Normal"
+                   FontWeight="Normal"
+                   FontStretch="Normal"
+                   Foreground="#ffffff"
+                   Grid.Row="3"
+                   VerticalAlignment="Center"/>
+
+        <TextBlock Text="Полка"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 10 0"
+                   FontSize="20"
+                   FontFamily="Helvetica"
+                   FontStyle="Normal"
+                   FontWeight="Normal"
+                   FontStretch="Normal"
+                   Foreground="#ffffff"
+                   Grid.Row="4"
+                   VerticalAlignment="Center"/>
+
+        <TextBlock Text="Издательство"
+                   HorizontalAlignment="Right"
+                   Margin="0 0 10 0"
+                   FontSize="20"
+                   FontFamily="Helvetica"
+                   FontStyle="Normal"
+                   FontWeight="Normal"
+                   FontStretch="Normal"
+                   Foreground="#ffffff"
+                   Grid.Row="5"
+                   VerticalAlignment="Center"/>
+
+
+        <!--Правая часть с возможностью ввода-->
+        <TextBox x:Name="txtTitle"
+                 HorizontalAlignment="Left"
+                 Margin="10 0 0 0"
+                 Width="250"
+                 FontFamily="Helvetica"
+                 FontStyle="Normal"
+                 FontWeight="Normal"
+                 FontStretch="Normal"
+                 Foreground="#0f1419"
+                 VerticalContentAlignment="Center"
+                 Grid.Column="1"
+                 Grid.Row="1"
+                 Height="30" 
+                 Style="{DynamicResource txtRound}"/>
+
+        <ComboBox x:Name="cmbLastNameAuthor"
+                 HorizontalAlignment="Left"
+                 Margin="10 0 0 0"
+                 Width="250"
+                 FontFamily="Helvetica"
+                 FontStyle="Normal"
+                 FontWeight="Normal"
+                 FontStretch="Normal"
+                 VerticalContentAlignment="Center"
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 Height="30"/>
+
+        <ComboBox x:Name="cmbFirstNameAuthor"
+                 HorizontalAlignment="Left"
+                 Margin="10 0 0 0"
+                 Width="250"
+                 FontFamily="Helvetica"
+                 FontStyle="Normal"
+                 FontWeight="Normal"
+                 FontStretch="Normal"
+                 VerticalContentAlignment="Center"
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 Height="30"/>
+
+        <ComboBox x:Name="cmbSelection"
+                 HorizontalAlignment="Left"
+                 Margin="10 0 0 0"
+                 Width="250"
+                 FontFamily="Helvetica"
+                 FontStyle="Normal"
+                 FontWeight="Normal"
+                 FontStretch="Normal"
+                 VerticalContentAlignment="Center"
+                 Grid.Column="1"
+                 Grid.Row="4"
+                 Height="30"/>
+
+
+        <ComboBox x:Name="cmbPublishHouse"
+                 HorizontalAlignment="Left"
+                 Margin="10 0 0 0"
+                 Width="250"
+                 FontFamily="Helvetica"
+                 FontStyle="Normal"
+                 FontWeight="Normal"
+                 FontStretch="Normal"
+                 VerticalContentAlignment="Center"
+                 Grid.Column="1"
+                 Grid.Row="5"
+                 Height="30"/>
+
+        <Button  x:Name="btnAddBook"
+                 Content="Добавить"
+                 Margin="0 0 0 0"
+                 FontSize="25"
+                 Width="200"
+                 Height="40"
+                 Grid.ColumnSpan="2"
+                 Grid.Row="6"
+                 Grid.RowSpan="2"
+                 FontFamily="Helvetica"
+                 Foreground="#ffffff"
+                 Style="{DynamicResource RoundCorner}"
+                 Click="btnAddBook_Click"/>
+
+    </Grid>
+</Window>

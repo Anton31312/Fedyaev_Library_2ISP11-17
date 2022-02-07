@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="24417d14215744f08fdeb8183a4b4178" Name="Diagram1">
+        <EntityTypeShape EntityType="Library_FedyaevModel.Author" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library_FedyaevModel.Book" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library_FedyaevModel.BookRental" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library_FedyaevModel.Emplovee" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library_FedyaevModel.Gender" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library_FedyaevModel.Genre" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library_FedyaevModel.PublishHouse" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library_FedyaevModel.Reader" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library_FedyaevModel.Selection" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Library_FedyaevModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="Library_FedyaevModel.FK_Book_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="Library_FedyaevModel.FK_Book_PublishHouse" ManuallyRouted="false" />
+        <AssociationConnector Association="Library_FedyaevModel.FK_Book_Selection" ManuallyRouted="false" />
+        <AssociationConnector Association="Library_FedyaevModel.FK_BookRental_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="Library_FedyaevModel.FK_BookRental_Emplovee" ManuallyRouted="false" />
+        <AssociationConnector Association="Library_FedyaevModel.FK_BookRental_Reader" ManuallyRouted="false" />
+        <AssociationConnector Association="Library_FedyaevModel.FK_Reader_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="Library_FedyaevModel.BookAndGenre" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
