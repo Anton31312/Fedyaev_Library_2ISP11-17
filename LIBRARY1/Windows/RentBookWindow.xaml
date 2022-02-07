@@ -52,6 +52,34 @@
                       Width="150"
                       Margin="20 0 0 0"
                       SelectionChanged="cmbSort_SelectionChanged"/>
+
+            <TextBlock Text="Дата выдачи"
+                       Margin="20 0 0 0"
+                       FontSize="18"
+                       FontFamily="Helvetica"
+                       FontStyle="Normal"
+                       FontWeight="Bold"
+                       FontStretch="Normal"
+                       Foreground="#ffffff"/>
+
+            <DatePicker x:Name="dpDateStart"
+                        Margin="10 0 0 0"
+                        SelectedDateFormat="Short"
+                        IsDropDownOpen="False"/>
+
+            <TextBlock Text="Дата возврата"
+                       Margin="20 0 0 0"
+                       FontSize="18"
+                       FontFamily="Helvetica"
+                       FontStyle="Normal"
+                       FontWeight="Bold"
+                       FontStretch="Normal"
+                       Foreground="#ffffff"/>
+
+            <DatePicker x:Name="dpDateEnd"
+                        Margin="10 0 0 0"
+                        SelectedDateFormat="Short"
+                        IsDropDownOpen="False"/>
         </WrapPanel>
 
         <ListView x:Name="listRentBook"
