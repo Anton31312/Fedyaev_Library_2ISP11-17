@@ -56,7 +56,8 @@
 
         <ListView x:Name="listReader"
                   Grid.Row="3"
-                  KeyUp="listReader_KeyUp">
+                  KeyUp="listReader_KeyUp"
+                  MouseDoubleClick="listReader_MouseDoubleClick">
             <ListView.View>
                 <GridView ColumnHeaderContainerStyle="{DynamicResource ColorListView}">
                     <GridViewColumn Header="ID" Width="Auto" DisplayMemberBinding="{Binding ID}"/>

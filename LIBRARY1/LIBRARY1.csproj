@@ -66,11 +66,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassHelper\ValidationClass.cs" />
-    <Compile Include="Windows\AddBookWindow.xaml.cs">
-      <DependentUpon>AddBookWindow.xaml</DependentUpon>
+    <Compile Include="Windows\AddEditBookWindow.xaml.cs">
+      <DependentUpon>AddEditBookWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\AddReaderWindow.xaml.cs">
-      <DependentUpon>AddReaderWindow.xaml</DependentUpon>
+    <Compile Include="Windows\AddEditReaderWindow.xaml.cs">
+      <DependentUpon>AddEditReaderWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\BookWindow.xaml.cs">
       <DependentUpon>BookWindow.xaml</DependentUpon>
@@ -81,11 +81,11 @@
     <Compile Include="Windows\RentBookWindow.xaml.cs">
       <DependentUpon>RentBookWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Windows\AddBookWindow.xaml">
+    <Page Include="Windows\AddEditBookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\AddReaderWindow.xaml">
+    <Page Include="Windows\AddEditReaderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LIBRARY1.EF;
 using LIBRARY1.ClassHelper;
+using LIBRARY1.Windows;
 
 namespace LIBRARY1.Windows
 {
@@ -120,6 +121,21 @@ namespace LIBRARY1.Windows
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void listBook_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var editBook = new EF.Book();
+
+            if (listBook.SelectedItem is EF.Book)
+            {
+                editBook = listBook.SelectedItem as EF.Book;
+            }
+            AddBookWindow editBookWindow = new AddBookWindow(editBook);
+            this.Opacity = 0.2;
+            editBookWindow.ShowDialog();
+            this.Opacity = 1;
+            Filter();
         }
     }
 }

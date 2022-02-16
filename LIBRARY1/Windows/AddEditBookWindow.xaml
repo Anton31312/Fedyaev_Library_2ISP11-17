@@ -1,11 +1,11 @@
-﻿<Window x:Class="LIBRARY1.Windows.AddReaderWindow"
+﻿<Window x:Class="LIBRARY1.Windows.AddBookWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LIBRARY1.Windows"
         mc:Ignorable="d"
-        Title="AddReaderWindow"
+        Title="AddBookWindow" 
         Height="450"
         Width="600"
         WindowStartupLocation="CenterScreen"
@@ -26,7 +26,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Добавить читателя"
+        <TextBlock Text="Добавить книгу"
                    HorizontalAlignment="Center"
                    FontSize="35"
                    FontFamily="Helvetica"
@@ -35,10 +35,11 @@
                    FontWeight="Bold"
                    FontStretch="Normal"
                    Foreground="#ffffff"
-                   Grid.ColumnSpan="2"/>
+                   Grid.ColumnSpan="2"
+                   x:Name="tbTitle"/>
 
         <!--Левая часть с определениями столбцов-->
-        <TextBlock Text="Фамилия"
+        <TextBlock Text="Название книги"
                    HorizontalAlignment="Right"
                    Margin="0 0 10 0"
                    FontSize="20"
@@ -50,7 +51,7 @@
                    Grid.Row="1"
                    VerticalAlignment="Center"/>
 
-        <TextBlock Text="Имя"
+        <TextBlock Text="Фамилия автора"
                    HorizontalAlignment="Right"
                    Margin="0 0 10 0"
                    FontSize="20"
@@ -62,7 +63,7 @@
                    Grid.Row="2"
                    VerticalAlignment="Center"/>
 
-        <TextBlock Text="Телефон"
+        <TextBlock Text="Имя автора"
                    HorizontalAlignment="Right"
                    Margin="0 0 10 0"
                    FontSize="20"
@@ -74,7 +75,7 @@
                    Grid.Row="3"
                    VerticalAlignment="Center"/>
 
-        <TextBlock Text="Email"
+        <TextBlock Text="Полка"
                    HorizontalAlignment="Right"
                    Margin="0 0 10 0"
                    FontSize="20"
@@ -86,7 +87,7 @@
                    Grid.Row="4"
                    VerticalAlignment="Center"/>
 
-        <TextBlock Text="Пол"
+        <TextBlock Text="Издательство"
                    HorizontalAlignment="Right"
                    Margin="0 0 10 0"
                    FontSize="20"
@@ -98,20 +99,9 @@
                    Grid.Row="5"
                    VerticalAlignment="Center"/>
 
-        <TextBlock Text="Адрес"
-                   HorizontalAlignment="Right"
-                   Margin="0 0 10 0"
-                   FontSize="20"
-                   FontFamily="Helvetica"
-                   FontStyle="Normal"
-                   FontWeight="Normal"
-                   FontStretch="Normal"
-                   Foreground="#ffffff"
-                   Grid.Row="6"
-                   VerticalAlignment="Center"/>
 
         <!--Правая часть с возможностью ввода-->
-        <TextBox x:Name="txtLastName"
+        <TextBox x:Name="txtTitle"
                  HorizontalAlignment="Left"
                  Margin="10 0 0 0"
                  Width="250"
@@ -126,7 +116,7 @@
                  Height="30" 
                  Style="{DynamicResource txtRound}"/>
 
-        <TextBox x:Name="txtFirstName"
+        <ComboBox x:Name="cmbLastNameAuthor"
                  HorizontalAlignment="Left"
                  Margin="10 0 0 0"
                  Width="250"
@@ -134,14 +124,12 @@
                  FontStyle="Normal"
                  FontWeight="Normal"
                  FontStretch="Normal"
-                 Foreground="#0f1419"
                  VerticalContentAlignment="Center"
                  Grid.Column="1"
                  Grid.Row="2"
-                 Height="30"
-                 Style="{DynamicResource txtRound}"/>
+                 Height="30"/>
 
-        <TextBox x:Name="txtPhone"
+        <ComboBox x:Name="cmbFirstNameAuthor"
                  HorizontalAlignment="Left"
                  Margin="10 0 0 0"
                  Width="250"
@@ -149,15 +137,12 @@
                  FontStyle="Normal"
                  FontWeight="Normal"
                  FontStretch="Normal"
-                 Foreground="#0f1419"
                  VerticalContentAlignment="Center"
                  Grid.Column="1"
                  Grid.Row="3"
-                 Height="30"
-                 Style="{DynamicResource txtRound}"
-                 TextChanged="txtPhone_TextChanged"/>
+                 Height="30"/>
 
-        <TextBox x:Name="txtEmail"
+        <ComboBox x:Name="cmbSelection"
                  HorizontalAlignment="Left"
                  Margin="10 0 0 0"
                  Width="250"
@@ -165,24 +150,13 @@
                  FontStyle="Normal"
                  FontWeight="Normal"
                  FontStretch="Normal"
-                 Foreground="#0f1419"
                  VerticalContentAlignment="Center"
                  Grid.Column="1"
                  Grid.Row="4"
-                 Height="30"
-                 Style="{DynamicResource txtRound}"
-                 TextChanged="txtEmail_TextChanged"/>
+                 Height="30"/>
 
-        <ComboBox x:Name="cmbGender"
-                  HorizontalAlignment="Left"
-                  Margin="10 0 0 0"
-                  Width="250"
-                  VerticalContentAlignment="Center"
-                  Grid.Column="1"
-                  Grid.Row="5"
-                  Height="30"/>
 
-        <TextBox x:Name="txtAddress"
+        <ComboBox x:Name="cmbPublishHouse"
                  HorizontalAlignment="Left"
                  Margin="10 0 0 0"
                  Width="250"
@@ -190,26 +164,24 @@
                  FontStyle="Normal"
                  FontWeight="Normal"
                  FontStretch="Normal"
-                 Foreground="#0f1419"
                  VerticalContentAlignment="Center"
                  Grid.Column="1"
-                 Grid.Row="6"
-                 Height="30"
-                 Style="{DynamicResource txtRound}"/>
+                 Grid.Row="5"
+                 Height="30"/>
 
-        <Button  x:Name="btnAdd"
+        <Button  x:Name="btnAddBook"
                  Content="Добавить"
                  Margin="0 0 0 0"
                  FontSize="25"
                  Width="200"
                  Height="40"
                  Grid.ColumnSpan="2"
-                 Grid.Row="7"
+                 Grid.Row="6"
+                 Grid.RowSpan="2"
                  FontFamily="Helvetica"
                  Foreground="#ffffff"
                  Style="{DynamicResource RoundCorner}"
-                 Click="btnAdd_Click"/>
-
+                 Click="btnAddBook_Click"/>
 
     </Grid>
 </Window>

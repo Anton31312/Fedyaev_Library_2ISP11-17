@@ -119,5 +119,20 @@ namespace LIBRARY1.Windows
             mainWindow.Show();
             this.Close();
         }
+
+        private void listReader_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var editReader = new EF.Reader();
+
+            if (listReader.SelectedItem is EF.Reader)
+            {
+                editReader = listReader.SelectedItem as EF.Reader;
+            }
+            AddReaderWindow editReaderWindow = new AddReaderWindow(editReader);
+            this.Opacity = 0.2;
+            editReaderWindow.ShowDialog();
+            this.Opacity = 1;
+            Filter();
+        }
     }
 }
