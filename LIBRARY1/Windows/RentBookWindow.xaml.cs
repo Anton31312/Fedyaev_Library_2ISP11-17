@@ -113,7 +113,11 @@ namespace LIBRARY1.Windows
 
         private void btnAddRentBook_Click(object sender, RoutedEventArgs e)
         {
-
+            AddEditRentBookWindow addRentBookWindow = new AddEditRentBookWindow();
+            this.Opacity = 0.2;
+            addRentBookWindow.ShowDialog();
+            this.Opacity = 1;
+            Filter();
         }
     }
 }

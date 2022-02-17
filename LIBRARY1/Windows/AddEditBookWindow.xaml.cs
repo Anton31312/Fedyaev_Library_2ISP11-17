@@ -141,6 +141,7 @@ namespace LIBRARY1.Windows
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message.ToString());
                 }
             }
         }

@@ -26,6 +26,7 @@ namespace LIBRARY1.EF
         public int IDAuthor { get; set; }
         public int IDSection { get; set; }
         public int IDPublishHouse { get; set; }
+        public bool IsDeleted { get; set; }
     
         public virtual Author Author { get; set; }
         public virtual PublishHouse PublishHouse { get; set; }

@@ -40,7 +40,7 @@ namespace LIBRARY1.Windows
 
         private void Filter()
         {
-            bookList = AppDate.Context.Book.ToList();
+            bookList = AppDate.Context.Book.Where(i => i.IsDeleted == false).ToList();
             bookList = bookList.
                             Where(i => i.Title.ToLower().Contains(txtSearch.Text.ToLower()) ||
                             i.PublishHouse.NamePublishHouse.ToLower().Contains(txtSearch.Text.ToLower())).ToList();

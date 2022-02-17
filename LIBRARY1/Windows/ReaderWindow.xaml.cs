@@ -40,7 +40,7 @@ namespace LIBRARY1.Windows
 
         private void Filter()
         {
-            readerList = AppDate.Context.Reader.ToList();
+            readerList = AppDate.Context.Reader.Where(i => i.IsDeleted == false).ToList();
             readerList = readerList.
                             Where(i => i.LastName.ToLower().Contains(txtSearch.Text.ToLower()) || 
                             i.FirstName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();

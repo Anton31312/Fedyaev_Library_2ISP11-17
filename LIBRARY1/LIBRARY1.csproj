@@ -72,6 +72,9 @@
     <Compile Include="Windows\AddEditReaderWindow.xaml.cs">
       <DependentUpon>AddEditReaderWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddEditRentBookWindow.xaml.cs">
+      <DependentUpon>AddEditRentBookWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\BookWindow.xaml.cs">
       <DependentUpon>BookWindow.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AddEditReaderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddEditRentBookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
