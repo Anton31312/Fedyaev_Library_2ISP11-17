@@ -41,7 +41,6 @@ namespace LIBRARY1.Windows
                             Where(i => i.Reader.LastName.ToLower().Contains(txtSearch.Text.ToLower()) ||
                             i.Reader.FirstName.ToLower().Contains(txtSearch.Text.ToLower()) ||
                             i.Book.Title.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
-
             switch (cmbSort.SelectedIndex)
             {
                 case 0:
