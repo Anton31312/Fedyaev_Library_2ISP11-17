@@ -24,6 +24,7 @@
           <Property Name="IDSection" Type="int" Nullable="false" />
           <Property Name="IDPublishHouse" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="BookAndGenre">
           <Key>
@@ -90,6 +91,7 @@
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="IDGender" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Selection">
           <Key>
@@ -325,6 +327,7 @@
           <NavigationProperty Name="BookRental" Relationship="Self.FK_BookRental_Book" FromRole="Book" ToRole="BookRental" />
           <NavigationProperty Name="Genre" Relationship="Self.BookAndGenre" FromRole="Book" ToRole="Genre" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BookRental">
           <Key>
@@ -392,6 +395,7 @@
           <NavigationProperty Name="BookRental" Relationship="Self.FK_BookRental_Reader" FromRole="Reader" ToRole="BookRental" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Reader_Gender" FromRole="Reader" ToRole="Gender" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Selection">
           <Key>
@@ -603,6 +607,7 @@
           <EntitySetMapping Name="Book">
             <EntityTypeMapping TypeName="Library_FedyaevModel.Book">
               <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -664,6 +669,7 @@
           <EntitySetMapping Name="Reader">
             <EntityTypeMapping TypeName="Library_FedyaevModel.Reader">
               <MappingFragment StoreEntitySet="Reader">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />

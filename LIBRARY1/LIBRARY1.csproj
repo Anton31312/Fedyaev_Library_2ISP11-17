@@ -69,6 +69,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassHelper\ValidationClass.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AddEditBookWindow.xaml.cs">
       <DependentUpon>AddEditBookWindow.xaml</DependentUpon>
     </Compile>
@@ -87,6 +90,10 @@
     <Compile Include="Windows\RentBookWindow.xaml.cs">
       <DependentUpon>RentBookWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AddEditBookWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -218,10 +225,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resource\user.png" />
     <Resource Include="Books_40673.ico" />
     <Content Include="EF\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
