@@ -40,7 +40,8 @@
                    FontStretch="Normal"
                    Foreground="#ffffff"
                    Grid.ColumnSpan="2"
-                   x:Name="tbTitle" Margin="133,0,132,38" Grid.RowSpan="2"/>
+                   x:Name="tbTitle"
+                   Grid.RowSpan="2"/>
 
         <!--Левая часть с определениями столбцов-->
         <TextBlock Text="Фамилия"

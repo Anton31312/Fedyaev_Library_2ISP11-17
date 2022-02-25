@@ -41,7 +41,7 @@ namespace LIBRARY1.Windows
         public AddReaderWindow(EF.Reader reader)
         {
 
-            // вставка изображения
+            // add image
             if (reader.Photo != null)
             {
                 using (MemoryStream stream = new MemoryStream(reader.Photo))
