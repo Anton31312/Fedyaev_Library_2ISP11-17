@@ -6,12 +6,16 @@
         xmlns:local="clr-namespace:LIBRARY1.Windows"
         mc:Ignorable="d"
         Title="Читатель"
-        Height="450"
+        Height="550"
         Width="600"
         WindowStartupLocation="CenterScreen"
         Background="#1da1f2">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -36,12 +40,12 @@
                    FontStretch="Normal"
                    Foreground="#ffffff"
                    Grid.ColumnSpan="2"
-                   x:Name="tbTitle"/>
+                   x:Name="tbTitle" Margin="133,0,132,38" Grid.RowSpan="2"/>
 
         <!--Левая часть с определениями столбцов-->
         <TextBlock Text="Фамилия"
                    HorizontalAlignment="Right"
-                   Margin="0 0 10 0"
+                   Margin="0,7.5,10,7"
                    FontSize="20"
                    FontFamily="Helvetica"
                    FontStyle="Normal"
@@ -53,7 +57,7 @@
 
         <TextBlock Text="Имя"
                    HorizontalAlignment="Right"
-                   Margin="0 0 10 0"
+                   Margin="0,7,9,7.5"
                    FontSize="20"
                    FontFamily="Helvetica"
                    FontStyle="Normal"
@@ -65,7 +69,7 @@
 
         <TextBlock Text="Телефон"
                    HorizontalAlignment="Right"
-                   Margin="0 0 10 0"
+                   Margin="0,7.5,10,7"
                    FontSize="20"
                    FontFamily="Helvetica"
                    FontStyle="Normal"
@@ -77,7 +81,7 @@
 
         <TextBlock Text="Email"
                    HorizontalAlignment="Right"
-                   Margin="0 0 10 0"
+                   Margin="0,7,9,7.5"
                    FontSize="20"
                    FontFamily="Helvetica"
                    FontStyle="Normal"
@@ -89,7 +93,7 @@
 
         <TextBlock Text="Пол"
                    HorizontalAlignment="Right"
-                   Margin="0 0 10 0"
+                   Margin="0,7.5,10,7"
                    FontSize="20"
                    FontFamily="Helvetica"
                    FontStyle="Normal"
@@ -101,7 +105,7 @@
 
         <TextBlock Text="Адрес"
                    HorizontalAlignment="Right"
-                   Margin="0 0 10 0"
+                   Margin="0,7,9,7.5"
                    FontSize="20"
                    FontFamily="Helvetica"
                    FontStyle="Normal"
@@ -114,7 +118,7 @@
         <!--Правая часть с возможностью ввода-->
         <TextBox x:Name="txtLastName"
                  HorizontalAlignment="Left"
-                 Margin="10 0 0 0"
+                 Margin="10,4.5,0,4"
                  Width="250"
                  FontFamily="Helvetica"
                  FontStyle="Normal"
@@ -129,7 +133,7 @@
 
         <TextBox x:Name="txtFirstName"
                  HorizontalAlignment="Left"
-                 Margin="10 0 0 0"
+                 Margin="10,4,0,4.5"
                  Width="250"
                  FontFamily="Helvetica"
                  FontStyle="Normal"
@@ -144,7 +148,7 @@
 
         <TextBox x:Name="txtPhone"
                  HorizontalAlignment="Left"
-                 Margin="10 0 0 0"
+                 Margin="10,4.5,0,4"
                  Width="250"
                  FontFamily="Helvetica"
                  FontStyle="Normal"
@@ -160,7 +164,7 @@
 
         <TextBox x:Name="txtEmail"
                  HorizontalAlignment="Left"
-                 Margin="10 0 0 0"
+                 Margin="10,4,0,4.5"
                  Width="250"
                  FontFamily="Helvetica"
                  FontStyle="Normal"
@@ -176,7 +180,7 @@
 
         <ComboBox x:Name="cmbGender"
                   HorizontalAlignment="Left"
-                  Margin="10 0 0 0"
+                  Margin="10,4.5,0,4"
                   Width="250"
                   VerticalContentAlignment="Center"
                   Grid.Column="1"
@@ -185,7 +189,7 @@
 
         <TextBox x:Name="txtAddress"
                  HorizontalAlignment="Left"
-                 Margin="10 0 0 0"
+                 Margin="10,4,0,4.5"
                  Width="250"
                  FontFamily="Helvetica"
                  FontStyle="Normal"
@@ -198,14 +202,46 @@
                  Height="30"
                  Style="{DynamicResource txtRound}"/>
 
+        <!-- Блок с изображением -->
+
+        <Border Grid.Row="7"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Grid.RowSpan="4"
+                Margin="0,0,0,0"
+                Width="150"
+                Height="150"
+                BorderThickness="2"
+                BorderBrush="LightGray"
+                CornerRadius="10">
+            <Image x:Name="imgUser" 
+                   Source="/LIBRARY1;component/Resource/user.png"/>
+        </Border>
+
+        <Button  x:Name="btnChoosePhoto" 
+                 Content="Выбрать изображение"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Right"
+                 FontSize="16"
+                 Grid.Row="8"
+                 Grid.Column="1"
+                 Margin="0 0 10 0"
+                 Width="200"
+                 Height="30"
+                 Click="btnChoosePhoto_Click" 
+                 Grid.RowSpan="3"
+                 Style="{DynamicResource RoundCorner}"
+                 FontFamily="Helvetica"
+                 Foreground="#ffffff"/>
+
         <Button  x:Name="btnAdd"
                  Content="Добавить"
-                 Margin="0 0 0 0"
-                 FontSize="25"
-                 Width="200"
-                 Height="40"
+                 Margin="198,4.333,197,4.167"
+                 FontSize="20"
+                 Width="150"
+                 Height="30"
                  Grid.ColumnSpan="2"
-                 Grid.Row="7"
+                 Grid.Row="11"
                  FontFamily="Helvetica"
                  Foreground="#ffffff"
                  Style="{DynamicResource RoundCorner}"

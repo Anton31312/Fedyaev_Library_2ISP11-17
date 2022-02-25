@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LIBRARY1.ClassHelper;
 using LIBRARY1.Windows;
+using Microsoft.Win32;
 
 namespace LIBRARY1.Windows
 {
@@ -22,8 +24,8 @@ namespace LIBRARY1.Windows
     public partial class AddReaderWindow : Window
     {
         EF.Reader editReader = new EF.Reader();
-
-        bool isEdit = true;
+        bool isEdit = true; // изменяем или добавляем пользователя
+        string pathPhoto = null; // Для сохранения пути к изображению
 
         public AddReaderWindow()
         {
@@ -38,6 +40,22 @@ namespace LIBRARY1.Windows
 
         public AddReaderWindow(EF.Reader reader)
         {
+
+            // вставка изображения
+            if (reader.Photo != null)
+            {
+                using (MemoryStream stream = new MemoryStream(reader.Photo))
+                {
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.BeginInit();
+                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                    bitmapImage.StreamSource = stream;
+                    bitmapImage.EndInit();
+                    imgUser.Source = bitmapImage;
+
+                }
+            }
 
             InitializeComponent();
             //edit combobox
@@ -142,6 +160,11 @@ namespace LIBRARY1.Windows
                     editReader.Address = txtAddress.Text;
                     editReader.IDGender = cmbGender.SelectedIndex + 1;
 
+                    if (pathPhoto != null)
+                    {
+                        editReader.Photo = File.ReadAllBytes(pathPhoto);
+                    }
+
                     AppDate.Context.SaveChanges();
                     MessageBox.Show("Данные пользователя успешно изменены", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                     this.Close();
@@ -166,6 +189,12 @@ namespace LIBRARY1.Windows
                         reader.Email = txtEmail.Text;
                         reader.Address = txtAddress.Text;
                         reader.IDGender = cmbGender.SelectedIndex + 1;
+
+                        if (pathPhoto != null)
+                        {
+                            reader.Photo = File.ReadAllBytes(pathPhoto);
+                        }
+
 
                         AppDate.Context.Reader.Add(reader);
                         AppDate.Context.SaveChanges();
@@ -195,6 +224,17 @@ namespace LIBRARY1.Windows
         private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void btnChoosePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                imgUser.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+
+                pathPhoto = openFileDialog.FileName;
+            }
         }
     }
 }

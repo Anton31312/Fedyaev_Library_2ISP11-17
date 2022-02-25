@@ -87,8 +87,15 @@
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
                             <Image x:Name="photoUser"
-                       Source="/LIBRARY1;component/Resource/user.png"
-                       Height="80"/>
+                                   Height="80">
+                                <Image.Source>
+                                    <Binding Path ="Photo">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/Resource/user.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
 
                             <StackPanel Grid.Column="1"
                             Margin="0 10 10 0">

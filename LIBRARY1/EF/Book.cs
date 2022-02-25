@@ -27,7 +27,7 @@ namespace LIBRARY1.EF
         public int IDSection { get; set; }
         public int IDPublishHouse { get; set; }
         public bool IsDeleted { get; set; }
-        public string Photo { get; set; }
+        public byte[] Photo { get; set; }
     
         public virtual Author Author { get; set; }
         public virtual PublishHouse PublishHouse { get; set; }
