@@ -45,3 +45,12 @@
 Мы можем добавлять новые записи о выдачи, для этого необходимо нажать на кнопку <b>"Добавить"</b>
 ![image](https://user-images.githubusercontent.com/24476910/154962964-29877417-f853-42b5-a646-1b9400342279.png)
 
+Сегодня мы добавили для пользователя изображение и изменили ListView
+![image](https://user-images.githubusercontent.com/24476910/155674169-a05cec4f-6c5a-4add-ba91-a693db512501.png)
+
+Так же мы добавили добавление и изменения изображения у пользователя
+![image](https://user-images.githubusercontent.com/24476910/155674249-cd02391b-1da6-483e-90e0-f6cf0f054bdd.png)
+
+![image](https://user-images.githubusercontent.com/24476910/155674380-613a8179-c0c1-43f4-b47a-30db3b442068.png)
+
+
