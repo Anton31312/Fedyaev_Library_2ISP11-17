@@ -216,7 +216,7 @@
                 BorderBrush="LightGray"
                 CornerRadius="10">
             <Image x:Name="imgUser" 
-                   Source="/LIBRARY1;component/Resource/user.png"/>
+                   />
         </Border>
 
         <Button  x:Name="btnChoosePhoto" 

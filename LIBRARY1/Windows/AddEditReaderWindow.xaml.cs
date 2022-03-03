@@ -40,6 +40,7 @@ namespace LIBRARY1.Windows
 
         public AddReaderWindow(EF.Reader reader)
         {
+            InitializeComponent();
 
             // add image
             if (reader.Photo != null)
@@ -57,7 +58,6 @@ namespace LIBRARY1.Windows
                 }
             }
 
-            InitializeComponent();
             //edit combobox
             cmbGender.ItemsSource = AppDate.Context.Gender.ToList();
             cmbGender.DisplayMemberPath = "NameGender";
