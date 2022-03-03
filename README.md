@@ -51,6 +51,6 @@
 Так же мы добавили добавление и изменения изображения у пользователя
 ![image](https://user-images.githubusercontent.com/24476910/155674249-cd02391b-1da6-483e-90e0-f6cf0f054bdd.png)
 
-![image](https://user-images.githubusercontent.com/24476910/155674380-613a8179-c0c1-43f4-b47a-30db3b442068.png)
+![image](https://user-images.githubusercontent.com/24476910/156526556-116eb8e8-99ca-49c7-8898-83a451002049.png)
 
 
