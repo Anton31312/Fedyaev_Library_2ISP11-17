@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Library_FedyaevModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Library_FedyaevModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Author">
           <Key>
             <PropertyRef Name="ID" />
@@ -25,6 +25,7 @@
           <Property Name="IDPublishHouse" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="Cost" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="BookAndGenre">
           <Key>
@@ -44,6 +45,7 @@
           <Property Name="StartDate" Type="date" Nullable="false" />
           <Property Name="EndDate" Type="date" Nullable="false" />
           <Property Name="IDEmplovee" Type="int" />
+          <Property Name="DebtRatio" Type="decimal" Precision="3" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Emplovee">
           <Key>
@@ -298,8 +300,7 @@
             <End Role="Reader" EntitySet="Reader" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Library_FedyaevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -329,6 +330,7 @@
           <NavigationProperty Name="Selection" Relationship="Self.FK_Book_Selection" FromRole="Book" ToRole="Selection" />
           <NavigationProperty Name="BookRental" Relationship="Self.FK_BookRental_Book" FromRole="Book" ToRole="BookRental" />
           <NavigationProperty Name="Genre" Relationship="Self.BookAndGenre" FromRole="Book" ToRole="Genre" />
+          <Property Name="Cost" Type="Decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="BookRental">
           <Key>
@@ -343,6 +345,7 @@
           <NavigationProperty Name="Book" Relationship="Self.FK_BookRental_Book" FromRole="BookRental" ToRole="Book" />
           <NavigationProperty Name="Emplovee" Relationship="Self.FK_BookRental_Emplovee" FromRole="BookRental" ToRole="Emplovee" />
           <NavigationProperty Name="Reader" Relationship="Self.FK_BookRental_Reader" FromRole="BookRental" ToRole="Reader" />
+          <Property Name="DebtRatio" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
         </EntityType>
         <EntityType Name="Emplovee">
           <Key>
@@ -608,6 +611,7 @@
           <EntitySetMapping Name="Book">
             <EntityTypeMapping TypeName="Library_FedyaevModel.Book">
               <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="IDAuthor" ColumnName="IDAuthor" />
@@ -621,6 +625,7 @@
           <EntitySetMapping Name="BookRental">
             <EntityTypeMapping TypeName="Library_FedyaevModel.BookRental">
               <MappingFragment StoreEntitySet="BookRental">
+                <ScalarProperty Name="DebtRatio" ColumnName="DebtRatio" />
                 <ScalarProperty Name="IDReader" ColumnName="IDReader" />
                 <ScalarProperty Name="IDBook" ColumnName="IDBook" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />

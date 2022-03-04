@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LIBRARY1.ClassHelper;
-using LIBRARY1.Windows;
 using Microsoft.Win32;
 
 namespace LIBRARY1.Windows

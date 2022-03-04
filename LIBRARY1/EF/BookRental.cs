@@ -19,6 +19,7 @@ namespace LIBRARY1.EF
         public System.DateTime StartDate { get; set; }
         public System.DateTime EndDate { get; set; }
         public Nullable<int> IDEmplovee { get; set; }
+        public decimal DebtRatio { get; set; }
     
         public virtual Book Book { get; set; }
         public virtual Emplovee Emplovee { get; set; }
