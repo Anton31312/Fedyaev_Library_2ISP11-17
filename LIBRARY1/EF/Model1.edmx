@@ -46,6 +46,7 @@
           <Property Name="EndDate" Type="date" Nullable="false" />
           <Property Name="IDEmplovee" Type="int" />
           <Property Name="DebtRatio" Type="decimal" Precision="3" Scale="2" Nullable="false" />
+          <Property Name="IsBack" Type="bit" />
         </EntityType>
         <EntityType Name="Emplovee">
           <Key>
@@ -346,6 +347,7 @@
           <NavigationProperty Name="Emplovee" Relationship="Self.FK_BookRental_Emplovee" FromRole="BookRental" ToRole="Emplovee" />
           <NavigationProperty Name="Reader" Relationship="Self.FK_BookRental_Reader" FromRole="BookRental" ToRole="Reader" />
           <Property Name="DebtRatio" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+          <Property Name="IsBack" Type="Boolean" />
         </EntityType>
         <EntityType Name="Emplovee">
           <Key>
@@ -625,6 +627,7 @@
           <EntitySetMapping Name="BookRental">
             <EntityTypeMapping TypeName="Library_FedyaevModel.BookRental">
               <MappingFragment StoreEntitySet="BookRental">
+                <ScalarProperty Name="IsBack" ColumnName="IsBack" />
                 <ScalarProperty Name="DebtRatio" ColumnName="DebtRatio" />
                 <ScalarProperty Name="IDReader" ColumnName="IDReader" />
                 <ScalarProperty Name="IDBook" ColumnName="IDBook" />

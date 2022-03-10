@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,7 @@ namespace LIBRARY1.ClassHelper
         {
 
             double sum = 0;
-            
-            if ((DateTime.Now.Date - startDate.Date) > 30)
+            if (startDate.Add(DateTime.Today + startDate.Date) > startDate.AddDays(30))
             {
                 sum = bookCost * 0.1;
             }

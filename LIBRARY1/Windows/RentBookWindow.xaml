@@ -92,6 +92,8 @@
                     <GridViewColumn Header="Название книги" Width="150" DisplayMemberBinding="{Binding Book.Title}"/>
                     <GridViewColumn Header="Дата взятие книги" Width="150" DisplayMemberBinding="{Binding StartDate}"/>
                     <GridViewColumn Header="Дата возврата книги" Width="Auto" DisplayMemberBinding="{Binding EndDate}"/>
+                    <GridViewColumn Header="Процент задолжности" Width="150" DisplayMemberBinding="{Binding DebtProperty}"/>
+                    <GridViewColumn Header="Возврат" Width="150" DisplayMemberBinding="{Binding IsBack}"/>
                 </GridView>
             </ListView.View>
         </ListView>
