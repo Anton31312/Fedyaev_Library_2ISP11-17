@@ -43,7 +43,7 @@
           <Property Name="IDReader" Type="int" Nullable="false" />
           <Property Name="IDBook" Type="int" Nullable="false" />
           <Property Name="StartDate" Type="date" Nullable="false" />
-          <Property Name="EndDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" />
           <Property Name="IDEmplovee" Type="int" />
           <Property Name="DebtRatio" Type="decimal" Precision="3" Scale="2" Nullable="false" />
           <Property Name="IsBack" Type="bit" />
@@ -341,7 +341,7 @@
           <Property Name="IDReader" Type="Int32" Nullable="false" />
           <Property Name="IDBook" Type="Int32" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
           <Property Name="IDEmplovee" Type="Int32" />
           <NavigationProperty Name="Book" Relationship="Self.FK_BookRental_Book" FromRole="BookRental" ToRole="Book" />
           <NavigationProperty Name="Emplovee" Relationship="Self.FK_BookRental_Emplovee" FromRole="BookRental" ToRole="Emplovee" />
