@@ -13,7 +13,6 @@ namespace LIBRARY1.ClassHelper
         {
 
             double sum = 0;
-            DateTime date;
             if (endDate == null)
             {
                 return 0;   
@@ -22,7 +21,7 @@ namespace LIBRARY1.ClassHelper
             {
                 return 0;
             }
-            if (Convert.ToInt32(DateTime.Now.Day - startDate.Day) > 30)
+            if (Convert.ToInt32(DateTime.Now.Date - startDate.Date) > 30)
             {
                 int i = 1;
                 while (i != Convert.ToInt32(DateTime.Now.Date - startDate.Date) - 30)

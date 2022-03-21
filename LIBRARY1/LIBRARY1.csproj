@@ -69,6 +69,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClassHelper\DebtRation.cs" />
     <Compile Include="ClassHelper\DebtRationClass.cs" />
     <Compile Include="ClassHelper\ValidationClass.cs" />
     <Compile Include="EF\Author.cs">

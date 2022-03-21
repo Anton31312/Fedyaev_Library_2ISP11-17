@@ -54,30 +54,18 @@
                       SelectionChanged="cmbSort_SelectionChanged"/>
         </WrapPanel>
 
-        
+
         <ListView x:Name="listReader"
                   Grid.Row="3"
                   KeyUp="listReader_KeyUp"
                   MouseDoubleClick="listReader_MouseDoubleClick">
-            <!--<ListView.View>
-                <GridView ColumnHeaderContainerStyle="{DynamicResource ColorListView}">
-                    <GridViewColumn Header="ID" Width="Auto" DisplayMemberBinding="{Binding ID}"/>
-                    <GridViewColumn Header="Фамилия" Width="Auto" DisplayMemberBinding="{Binding LastName}"/>
-                    <GridViewColumn Header="Имя" Width="Auto" DisplayMemberBinding="{Binding FirstName}"/>
-                    <GridViewColumn Header="Телефон" Width="Auto" DisplayMemberBinding="{Binding Phone}"/>
-                    <GridViewColumn Header="Email" Width="Auto" DisplayMemberBinding="{Binding Email}"/>
-                    <GridViewColumn Header="Адрес" Width="Auto" DisplayMemberBinding="{Binding Address}"/>
-                    <GridViewColumn Header="Пол" Width="Auto" DisplayMemberBinding="{Binding Gender.NameGender}"/>
-                </GridView>
-            </ListView.View>-->
-
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Background="#1da1f2"
-                Height="100"
-                Width="945"
-                Margin="5"
-                CornerRadius="10">
+                            Height="100"
+                            Width="945"
+                            Margin="5"
+                            CornerRadius="10">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"/>
@@ -98,27 +86,27 @@
                             </Image>
 
                             <StackPanel Grid.Column="1"
-                            Margin="0 10 10 0">
+                                        Margin="0 10 10 0">
                                 <TextBlock Margin="0 0 0 5"
-                               Text="Фамилия"
-                               HorizontalAlignment="Right"
+                                           Text="Фамилия"
+                                           HorizontalAlignment="Right"
                                            FontFamily="Helvetica"
-                                Foreground="#ffffff"
-                               FontSize="12"/>
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
 
                                 <TextBlock Margin="0 0 0 5"
-                           Text="Имя"
-                           HorizontalAlignment="Right"
+                                           Text="Имя"
+                                           HorizontalAlignment="Right"
                                            FontFamily="Helvetica"
-                                Foreground="#ffffff"
-                               FontSize="12"/>
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
 
                                 <TextBlock Margin="0 0 0 5"
-                           Text="Телефон"
-                           HorizontalAlignment="Right"
+                                           Text="Телефон"
+                                           HorizontalAlignment="Right"
                                            FontFamily="Helvetica"
-                                Foreground="#ffffff"
-                               FontSize="12"/>
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
                             </StackPanel>
 
                             <StackPanel Grid.Column="2"

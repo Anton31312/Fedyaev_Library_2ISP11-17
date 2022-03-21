@@ -40,7 +40,8 @@ namespace LIBRARY1.Windows
             rentBookList = rentBookList.
                             Where(i => i.Reader.LastName.ToLower().Contains(txtSearch.Text.ToLower()) ||
                             i.Reader.FirstName.ToLower().Contains(txtSearch.Text.ToLower()) ||
-                            i.Book.Title.ToLower().Contains(txtSearch.Text.ToLower()) ).ToList();
+                            i.Book.Title.ToLower().Contains(txtSearch.Text.ToLower()) || ((i.StartDate.Date == dpDateStart.SelectedDate || 
+                            i.StartDate.Date < dpDateStart.SelectedDate) && i.StartDate.Date < dpDateEnd.SelectedDate)).ToList();
             switch (cmbSort.SelectedIndex)
             {
                 case 0:
