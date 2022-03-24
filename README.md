@@ -53,4 +53,5 @@
 
 ![image](https://user-images.githubusercontent.com/24476910/156526556-116eb8e8-99ca-49c7-8898-83a451002049.png)
 
-
+Изменили окно выдачи книги, добавили сортировку, добавление даты сдачи книги
+![image](https://user-images.githubusercontent.com/24476910/159887574-01585fb5-5412-4d45-a691-97ea4d7baa2e.png)
