@@ -25,7 +25,13 @@ namespace LIBRARY1.Windows
     {
 
         List<Reader> readerList = new List<Reader>();
-        List<string> listSort = new List<string>() {"По умолчанию", "По фамилии", "По имени", "По адресу" };
+        List<string> listSort = new List<string>()
+        {
+            "По умолчанию",
+            "По фамилии",
+            "По имени",
+            "По адресу"
+        };
 
         public ReaderWindow()
         {

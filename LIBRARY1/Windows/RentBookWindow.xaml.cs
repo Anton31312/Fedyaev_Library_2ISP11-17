@@ -22,7 +22,13 @@ namespace LIBRARY1.Windows
     public partial class RentBookWindow : Window
     {
         List<BookRental> rentBookList = new List<BookRental>();
-        List<string> listSort = new List<string>() { "По умолчанию", "По фамилии читателя", "По имени читателя", "По названию книги"};
+        List<string> listSort = new List<string>()
+        {
+            "По умолчанию",
+            "По фамилии читателя",
+            "По имени читателя",
+            "По названию книги"
+        };
 
         public RentBookWindow()
         {
@@ -40,8 +46,10 @@ namespace LIBRARY1.Windows
             rentBookList = rentBookList.
                             Where(i => i.Reader.LastName.ToLower().Contains(txtSearch.Text.ToLower()) ||
                             i.Reader.FirstName.ToLower().Contains(txtSearch.Text.ToLower()) ||
-                            i.Book.Title.ToLower().Contains(txtSearch.Text.ToLower()) || ((i.StartDate.Date == dpDateStart.SelectedDate || 
-                            i.StartDate.Date < dpDateStart.SelectedDate) && i.StartDate.Date < dpDateEnd.SelectedDate)).ToList();
+                            i.Book.Title.ToLower().Contains(txtSearch.Text.ToLower()) ||
+                            i.StartDate.Date >= dpDateStart.SelectedDate ||
+                            i.StartDate.Date <= dpDateEnd.SelectedDate).ToList();
+
             switch (cmbSort.SelectedIndex)
             {
                 case 0:
@@ -116,6 +124,31 @@ namespace LIBRARY1.Windows
             AddEditRentBookWindow addRentBookWindow = new AddEditRentBookWindow();
             this.Opacity = 0.2;
             addRentBookWindow.ShowDialog();
+            this.Opacity = 1;
+            Filter();
+        }
+
+        private void dpDateStart_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Filter();
+        }
+
+        private void dpDateEnd_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Filter();
+        }
+
+        private void listRentBook_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var bookRental = new EF.BookRental();
+
+            if (listRentBook.SelectedItem is EF.BookRental)
+            {
+                bookRental = listRentBook.SelectedItem as EF.BookRental;
+            }
+            AddEditRentBookWindow editRentBookWindow = new AddEditRentBookWindow(bookRental);
+            this.Opacity = 0.2;
+            editRentBookWindow.ShowDialog();
             this.Opacity = 1;
             Filter();
         }

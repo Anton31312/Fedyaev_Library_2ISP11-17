@@ -22,6 +22,7 @@ namespace LIBRARY1.Windows
     public partial class AddEditRentBookWindow : Window
     {
         EF.BookRental editBookRental = new EF.BookRental();
+        bool isEdit = true;
 
         public AddEditRentBookWindow()
         {
@@ -41,30 +42,85 @@ namespace LIBRARY1.Windows
 
         }
 
+        public AddEditRentBookWindow(EF.BookRental bookRental)
+        {
+            InitializeComponent();
+
+            cmbBook.ItemsSource = AppDate.Context.Book.ToList();
+            cmbBook.DisplayMemberPath = "Title";
+
+            cmbReader.ItemsSource = AppDate.Context.Reader.ToList();
+            cmbReader.DisplayMemberPath = "LastName";
+
+            cmbEmployer.ItemsSource = AppDate.Context.Emplovee.ToList();
+            cmbEmployer.DisplayMemberPath = "LastName";
+
+
+            tbTitle.Text = "Поставить дату возврата";
+            btnAddRentBook.Content = "Добавить дату";
+
+
+            editBookRental = bookRental;
+
+            cmbBook.SelectedIndex = bookRental.IDBook - 1;
+            cmbReader.SelectedIndex = bookRental.IDReader - 1;
+            dtDateStart.SelectedDate = bookRental.StartDate;
+            dtDateEnd.SelectedDate = bookRental.EndDate;
+            if (cmbEmployer.SelectedIndex == (int)bookRental.IDEmplovee)
+            {
+                cmbEmployer.SelectedIndex = (int)bookRental.IDEmplovee - 1;
+            }
+
+
+            isEdit = true;
+        }
+
         private void btnAddRentBook_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (isEdit)
             {
-                var resultClick = MessageBox.Show("Вы уверены?", "Подтвердите добавление", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (resultClick == MessageBoxResult.Yes)
+                try
                 {
-                    //Добавление нового читателя
-                    EF.BookRental bookRental = new EF.BookRental();
-                    bookRental.IDBook = cmbBook.SelectedIndex + 1;
-                    bookRental.IDReader = cmbReader.SelectedIndex + 1;
-                    bookRental.IDEmplovee = cmbEmployer.SelectedIndex + 1;
-                    bookRental.StartDate = dtDateStart.DisplayDate;
-                    bookRental.EndDate = dtDateEnd.DisplayDate;
+                    var resultClick = MessageBox.Show("Вы уверены?", "Подтвердите добавление даты", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (resultClick == MessageBoxResult.Yes)
+                    {
+                        EF.BookRental bookRental = new EF.BookRental();
+                        bookRental.EndDate = dtDateEnd.DisplayDate;
 
-                    AppDate.Context.BookRental.Add(bookRental);
-                    AppDate.Context.SaveChanges();
-                    MessageBox.Show("Запись успешно добавлена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-                    this.Close();
+                        AppDate.Context.SaveChanges();
+                        MessageBox.Show("Дата сдачи успешно добавлена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message.ToString());
+                try
+                {
+                    var resultClick = MessageBox.Show("Вы уверены?", "Подтвердите добавление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (resultClick == MessageBoxResult.Yes)
+                    {
+                        EF.BookRental bookRental = new EF.BookRental();
+                        bookRental.IDBook = cmbBook.SelectedIndex + 1;
+                        bookRental.IDReader = cmbReader.SelectedIndex + 1;
+                        bookRental.IDEmplovee = cmbEmployer.SelectedIndex + 1;
+                        bookRental.StartDate = dtDateStart.DisplayDate;
+                        bookRental.EndDate = dtDateEnd.DisplayDate;
+
+                        AppDate.Context.BookRental.Add(bookRental);
+                        AppDate.Context.SaveChanges();
+                        MessageBox.Show("Запись успешно добавлена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
         }
     }
