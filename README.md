@@ -1,8 +1,4 @@
 # Fedyaev_Library_2ISP11-17
-<p align = "center"> <h1>Работа проекта</h1> </p>
-![2022-03-25 09-22-08](https://user-images.githubusercontent.com/24476910/160067117-940207c6-d117-461e-a129-597c4c1464a2.gif)
-
-
 <p align = "center"> <h1>Базы данных проекта</h1> </p>
 
 Диаграмма базы данных
