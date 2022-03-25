@@ -69,6 +69,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClassHelper\Book.cs" />
     <Compile Include="ClassHelper\DebtRation.cs" />
     <Compile Include="ClassHelper\DebtRationClass.cs" />
     <Compile Include="ClassHelper\ValidationClass.cs" />
@@ -241,6 +242,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resource\nophoto.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

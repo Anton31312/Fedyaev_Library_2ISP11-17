@@ -29,21 +29,21 @@ namespace LIBRARY1
         private void btnBook_Click(object sender, RoutedEventArgs e)
         {
             BookWindow bookWindow = new BookWindow();
-            bookWindow.ShowDialog();
+            bookWindow.Show();
             this.Close();
         }
 
         private void btnReader_Click(object sender, RoutedEventArgs e)
         {
             ReaderWindow readerWindow = new ReaderWindow();
-            readerWindow.ShowDialog();
+            readerWindow.Show();
             this.Close();
         }
 
         private void btnReaderBook_Click(object sender, RoutedEventArgs e)
         {
             RentBookWindow rentBookWindow = new RentBookWindow();
-            rentBookWindow.ShowDialog();
+            rentBookWindow.Show();
             this.Close();
         }
     }

@@ -58,16 +58,77 @@
                   Grid.Row="3"
                   KeyUp="listBook_KeyUp"
                   MouseDoubleClick="listBook_MouseDoubleClick">
-            <ListView.View>
-                <GridView ColumnHeaderContainerStyle="{DynamicResource ColorListView}">
-                    <GridViewColumn Header="ID" Width="Auto" DisplayMemberBinding="{Binding ID}"/>
-                    <GridViewColumn Header="Название книги" Width="Auto" DisplayMemberBinding="{Binding Title}"/>
-                    <GridViewColumn Header="Фамилия автора" Width="150" DisplayMemberBinding="{Binding Author.LastName}"/>
-                    <GridViewColumn Header="Имя автора" Width="150" DisplayMemberBinding="{Binding Author.FirstName}"/>
-                    <GridViewColumn Header="Полка" Width="Auto" DisplayMemberBinding="{Binding Selection.NameSelection}"/>
-                    <GridViewColumn Header="Издательство" Width="Auto" DisplayMemberBinding="{Binding PublishHouse.NamePublishHouse}"/>
-                </GridView>
-            </ListView.View>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="#1da1f2"
+                            Height="100"
+                            Width="945"
+                            Margin="5"
+                            CornerRadius="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image x:Name="photoBook"
+                                   Height="80">
+                                <Image.Source>
+                                    <Binding Path ="Photo">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/Resource/nophoto.jpg</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+                            </Image>
+
+                            <StackPanel Grid.Column="1"
+                                        Margin="0 10 10 0">
+                                <TextBlock Margin="0 0 0 5"
+                                           Text="{Binding GetTitle}"
+                                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                                           Text="{Binding GetAuthor}"
+                                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                                           Text="{Binding GetPublishHouse}"
+                                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="3"
+                            Margin="0 10 10 0">
+
+                                <TextBlock Margin="0 0 0 5"
+                           Text="{Binding GetSection}"
+                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                Foreground="#ffffff"
+                               FontSize="12"/>
+
+                                <TextBlock Margin="0 0 0 5"
+                                           Text="{Binding GetCost}"
+                                           HorizontalAlignment="Right"
+                                           FontFamily="Helvetica"
+                                           Foreground="#ffffff"
+                                           FontSize="12"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
         <Button x:Name="btnBack"

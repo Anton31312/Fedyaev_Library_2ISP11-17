@@ -75,19 +75,17 @@ namespace LIBRARY1.Windows
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             Filter();
-
         }
 
         private void cmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Filter();
-
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowDialog();
+            mainWindow.Show();
             this.Close();
         }
 
