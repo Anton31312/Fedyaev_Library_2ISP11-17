@@ -55,3 +55,7 @@
 
 Изменили окно выдачи книги, добавили сортировку, добавление даты сдачи книги
 ![image](https://user-images.githubusercontent.com/24476910/159887574-01585fb5-5412-4d45-a691-97ea4d7baa2e.png)
+
+Добавил заглушку фотографии и обновил окно книг
+![image](https://user-images.githubusercontent.com/24476910/160073922-a2bd0428-15ef-4aa3-9042-fdedb633ac2b.png)
+
