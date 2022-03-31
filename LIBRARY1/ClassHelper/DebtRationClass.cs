@@ -9,28 +9,25 @@ namespace LIBRARY1.ClassHelper
 {
     public class DebtRationClass
     {
-        public static decimal Debt(double bookCost, DateTime startDate, DateTime endDate)
+        public static double Debt(double bookCost, DateTime startDate)
         {
 
-            double sum = 0;
-            if (endDate == null)
-            {
-                return 0;   
-            }
-            if (Convert.ToInt32(endDate.Day - startDate.Day) < 30)
+            int dayCount = (DateTime.Now - startDate).Days;
+            double sum = (dayCount - 30) * 0.01 * bookCost;
+            if (bookCost <= 0)
             {
                 return 0;
             }
-            if (Convert.ToInt32(DateTime.Now.Date - startDate.Date) > 30)
+
+            if (sum > 0)
             {
-                int i = 1;
-                while (i != Convert.ToInt32(DateTime.Now.Date - startDate.Date) - 30)
-                {
-                    sum = bookCost * 0.01;
-                }
+                return sum;
+            }
+            else
+            {
+                return 0;
             }
 
-            return Convert.ToDecimal(sum);
         }
     }
 }

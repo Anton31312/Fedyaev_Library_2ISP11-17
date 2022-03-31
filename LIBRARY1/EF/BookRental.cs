@@ -24,7 +24,7 @@ namespace LIBRARY1.EF
         public decimal DebtRatio { get
             {
                 Book book = new Book();
-                return DebtRationClass.Debt(Convert.ToDouble(book.Cost), StartDate, (DateTime)EndDate);
+                return (decimal)DebtRationClass.Debt((double)book.Cost, StartDate);
             }  set { } }
         public Nullable<bool> IsBack { get; set; }
     
